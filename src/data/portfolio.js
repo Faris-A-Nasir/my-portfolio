@@ -128,7 +128,7 @@ export const techStack = [
 
 export const experience = [
   {
-    role: "Customer Relationship Management Developer",
+    role: "CRM Developer",
     company: "DW IS International LLC",
     location: "Oshkosh, USA (Remote)",
     period: "Oct 2025 – Mar 2026",
@@ -204,7 +204,7 @@ export const timeline = [
   {
     year: "2026",
     title: "Graduating & Going Global",
-    description: "CRM Developer at Smart IS (remote, USA). CS degree from Bahria University. Published Kaggle dataset. Launching international AI freelance.",
+    description: "CRM Developer at DW IS International LLC (remote, USA). CS degree from Bahria University. Published Kaggle dataset. Launching international AI freelance.",
   },
 ];
 
