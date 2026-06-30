@@ -129,7 +129,7 @@ export const techStack = [
 export const experience = [
   {
     role: "Customer Relationship Management Developer",
-    company: "Smart IS",
+    company: "DW IS International LLC",
     location: "Oshkosh, USA (Remote)",
     period: "Oct 2025 – Mar 2026",
     type: "Internship",
@@ -261,4 +261,4 @@ export const aiResponses = {
     experience:
       "Faris has worked as a Project-Based Web Developer at SHARCUT (Nov 2024 – Feb 2025) and as a Web Development Intern at Smart-IS (Aug–Sep 2024). He's also a final-year CS student at Bahria University Islamabad, graduating in 2026, with a research paper under review.",
   },
-};
+};     

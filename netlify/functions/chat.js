@@ -17,7 +17,7 @@ ABOUT FARIS:
 - Education: BS Computer Science, Bahria University Islamabad (Sep 2022 - Jun 2026). Relevant coursework: Data Structures & Algorithms, Operating Systems, Software Design and Analysis, Database Systems, Web Programming, Generative AI, Artificial Intelligence, Cloud Computing.
 
 EXPERIENCE:
-- Customer Relationship Management Developer at Smart IS, Oshkosh USA (Remote) (Oct 2025 - Mar 2026, Internship): built and maintained CRM features used by internal and client users, cutting manual data-entry time by an estimated 35%. Collaborated remotely with a distributed team shipping CRM modules on a recurring sprint cycle. Translated non-technical business requirements into working features.
+- Customer Relationship Management Developer at DW IS International LLC, Oshkosh USA (Remote) (Oct 2025 - Mar 2026, Internship): built and maintained CRM features used by internal and client users, cutting manual data-entry time by an estimated 35%. Collaborated remotely with a distributed team shipping CRM modules on a recurring sprint cycle. Translated non-technical business requirements into working features.
 - Project-Based Web Developer at SHARCUT, Islamabad (Nov 2024 - Feb 2025): built and maintained responsive web applications, collaborated with design/backend teams using HTML, CSS, JavaScript, React, PHP.
 - Web Development Intern at Smart-IS, Rawalpindi (Aug 2024 - Sep 2024): built React.js apps with Material UI and SQL backend.
 
