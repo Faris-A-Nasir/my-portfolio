@@ -10,9 +10,14 @@ export default function AIPlayground() {
   const [typing, setTyping] = useState(false);
   const [error, setError] = useState(false);
   const messagesEndRef = useRef(null);
+  const isFirstRender = useRef(true);
 
   useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      return;
+    }
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth", block: "nearest" });
   }, [messages, typing]);
 
   const sendMessage = async (text) => {
