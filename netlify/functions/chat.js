@@ -60,18 +60,37 @@ exports.handler = async (event) => {
     "Access-Control-Allow-Methods": "POST, OPTIONS",
   };
 
+  console.log("Function invoked. HTTP method:", event.httpMethod);
+
   if (event.httpMethod === "OPTIONS") {
     return { statusCode: 200, headers, body: "" };
   }
 
   if (event.httpMethod !== "POST") {
+    console.log("Rejected: not a POST request");
     return { statusCode: 405, headers, body: JSON.stringify({ error: "Method not allowed" }) };
   }
 
   try {
-    const { messages } = JSON.parse(event.body);
+    console.log("Raw event body:", event.body);
+
+    let parsedBody;
+    try {
+      parsedBody = JSON.parse(event.body);
+    } catch (parseErr) {
+      console.log("JSON parse failed:", parseErr.message);
+      return {
+        statusCode: 400,
+        headers,
+        body: JSON.stringify({ error: "Invalid JSON body", details: parseErr.message }),
+      };
+    }
+
+    const { messages } = parsedBody;
+    console.log("Parsed messages count:", messages ? messages.length : "undefined");
 
     if (!messages || !Array.isArray(messages)) {
+      console.log("Rejected: messages missing or not an array");
       return {
         statusCode: 400,
         headers,
@@ -80,13 +99,18 @@ exports.handler = async (event) => {
     }
 
     const apiKey = process.env.GROQ_API_KEY;
+    console.log("API key present:", !!apiKey, "Length:", apiKey ? apiKey.length : 0);
+
     if (!apiKey) {
+      console.log("Rejected: GROQ_API_KEY not found in environment");
       return {
         statusCode: 500,
         headers,
         body: JSON.stringify({ error: "Server is missing GROQ_API_KEY configuration" }),
       };
     }
+
+    console.log("Calling Groq API...");
 
     const response = await fetch("https://api.groq.com/openai/v1/chat/completions", {
       method: "POST",
@@ -105,8 +129,11 @@ exports.handler = async (event) => {
       }),
     });
 
+    console.log("Groq response status:", response.status);
+
     if (!response.ok) {
       const errText = await response.text();
+      console.log("Groq API error body:", errText);
       return {
         statusCode: response.status,
         headers,
@@ -117,12 +144,15 @@ exports.handler = async (event) => {
     const data = await response.json();
     const reply = data.choices?.[0]?.message?.content || "Sorry, I couldn't generate a response.";
 
+    console.log("Success. Reply length:", reply.length);
+
     return {
       statusCode: 200,
       headers,
       body: JSON.stringify({ reply }),
     };
   } catch (err) {
+    console.log("CAUGHT EXCEPTION:", err.message, err.stack);
     return {
       statusCode: 500,
       headers,
