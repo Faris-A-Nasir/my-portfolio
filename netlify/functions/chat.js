@@ -1,4 +1,5 @@
 // netlify/functions/chat.js
+// Rebuild trigger: forcing fresh env var injection
 //
 // Serverless function that proxies chat requests to Groq's API.
 // The GROQ_API_KEY environment variable is set in Netlify's dashboard
