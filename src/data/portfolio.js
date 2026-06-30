@@ -128,6 +128,18 @@ export const techStack = [
 
 export const experience = [
   {
+    role: "Customer Relationship Management Developer",
+    company: "Smart IS",
+    location: "Oshkosh, USA (Remote)",
+    period: "Oct 2025 – Mar 2026",
+    type: "Internship",
+    points: [
+      "Built and maintained CRM features used by internal and client users, cutting manual data-entry time by an estimated 35%.",
+      "Collaborated remotely with a distributed team to ship CRM modules on a recurring sprint cycle.",
+      "Translated non-technical business requirements directly into working features, closing the gap between stakeholders and code.",
+    ],
+  },
+  {
     role: "Project-Based Web Developer",
     company: "SHARCUT",
     location: "Islamabad, Pakistan",
@@ -192,7 +204,7 @@ export const timeline = [
   {
     year: "2026",
     title: "Graduating & Going Global",
-    description: "CS degree from Bahria University. Published Kaggle dataset. Launching international AI freelance.",
+    description: "CRM Developer at Smart IS (remote, USA). CS degree from Bahria University. Published Kaggle dataset. Launching international AI freelance.",
   },
 ];
 
