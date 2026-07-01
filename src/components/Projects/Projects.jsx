@@ -18,7 +18,7 @@ export default function Projects() {
         </div>
 
         {/* Filter */}
-        <div className="stack-filters reveal">
+        {/* <div className="stack-filters reveal">
           {categories.map((cat) => (
             <button
               key={cat}
@@ -28,7 +28,7 @@ export default function Projects() {
               {cat}
             </button>
           ))}
-        </div>
+        </div> */}
 
         {/* Grid */}
         <div className="projects-grid">
